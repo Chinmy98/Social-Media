@@ -16,8 +16,7 @@ function App() {
       <div className="app-container">
         <Sidebar
           selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        ></Sidebar>
+          setSelectedTab={setSelectedTab}/>
         <div className="content">
           <Header></Header>
           {selectedTab === "Home" ? (

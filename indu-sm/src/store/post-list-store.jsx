@@ -57,19 +57,19 @@ const PostListProvider = ({ children }) => {
 const DEFAULT_POST_LIST = [
   {
     id: "1",
-    title: "Going to Mumbai",
-    body: "Hi Friends, I am going to Mumbai for my vacations. Hope to enjoy a lot. Peace out.",
-    reactions: 2,
-    userId: "user-9",
-    tags: ["vacation", "Mumbai", "Enjoying"],
+    title: "Going to Goa",
+    body: "Hi Friends, I am going to Goa, for my vacations. Shh.. mumma ko math bathana, Hope to enjoy a lot with lot of drinks",
+    reactions: 20,
+    userId: "user-6",
+    tags: ["vacation", "GOA", "Enjoying", "Private"],
   },
   {
     id: "2",
-    title: "Paas ho bhai",
-    body: "4 saal ki masti k baad bhi ho gaye hain paas. Hard to believe.",
+    title: "Life in TCS",
+    body: "Finally in one of the MNC Company felt crazy in the begining, But now missing so badly product based company, Hopefully will go back to some other MNC product based company",
     reactions: 15,
-    userId: "user-12",
-    tags: ["Graduating", "Unbelievable"],
+    userId: "user-9",
+    tags: ["TCS", "MNC","ProductBased", "ServiceBased"],
   },
 ];
 
