@@ -36,7 +36,7 @@ const CreatePost = () => {
         <input
           type="text"
           ref={userIdElement}
-          className="form-control"
+          className="form-control form-text-box"
           id="userId"
           placeholder="Your User Id"
         />
@@ -49,7 +49,7 @@ const CreatePost = () => {
         <input
           type="text"
           ref={postTitleElement}
-          className="form-control"
+          className="form-control form-text-box"
           id="title"
           placeholder="How are you feeling today..."
         />
@@ -63,7 +63,7 @@ const CreatePost = () => {
           type="text"
           ref={postBodyElement}
           rows="4"
-          className="form-control"
+          className="form-control form-text-box"
           id="body"
           placeholder="Tell us more about it"
         />
@@ -76,7 +76,7 @@ const CreatePost = () => {
         <input
           type="text"
           ref={reactionsElement}
-          className="form-control"
+          className="form-control form-text-box"
           id="reactions"
           placeholder="How many people reacted to this post"
         />
@@ -88,7 +88,7 @@ const CreatePost = () => {
         </label>
         <input
           type="text"
-          className="form-control"
+          className="form-control form-text-box"
           id="tags"
           ref={tagsElement}
           placeholder="Please enter tags using space"
