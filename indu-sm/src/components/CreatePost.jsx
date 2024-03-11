@@ -29,75 +29,53 @@ const CreatePost = () => {
 
   return (
     <form className="create-post" onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="userId" className="form-label">
-          Enter your User Id here
-        </label>
-        <input
-          type="text"
-          ref={userIdElement}
-          className="form-control form-text-box"
-          id="userId"
-          placeholder="Your User Id"
-        />
+      <center><h1>Create your own Post</h1></center>
+      
+      <div className="form-group row">
+        <label htmlFor="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Enter User Id</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control form-control-lg" id="userId"
+          placeholder="Your User Id" ref={userIdElement}/>
+        </div>
+      </div>
+      
+      <div className="form-group row">
+        <label htmlFor="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Post Title</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control form-control-lg" id="title"
+          placeholder="How are you feeling today..." ref={postTitleElement}/>
+        </div>
+      </div>
+      
+      <div className="form-group row">
+        <label htmlFor="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Post Content</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control form-control-lg" id="body"
+          placeholder="Tell us more about it" ref={postBodyElement}/>
+        </div>
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="title" className="form-label">
-          Post Title
-        </label>
-        <input
-          type="text"
-          ref={postTitleElement}
-          className="form-control form-text-box"
-          id="title"
-          placeholder="How are you feeling today..."
-        />
+      <div className="form-group row">
+        <label htmlFor="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Number of reactions</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control form-control-lg" id="reactions"
+          placeholder="How many people reacted to this post" ref={reactionsElement}/>
+        </div>
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="body" className="form-label">
-          Post Content
-        </label>
-        <textarea
-          type="text"
-          ref={postBodyElement}
-          rows="4"
-          className="form-control form-text-box"
-          id="body"
-          placeholder="Tell us more about it"
-        />
-      </div>
-
-      <div className="mb-3">
-        <label htmlFor="reactions" className="form-label">
-          Number of reactions
-        </label>
-        <input
-          type="text"
-          ref={reactionsElement}
-          className="form-control form-text-box"
-          id="reactions"
-          placeholder="How many people reacted to this post"
-        />
-      </div>
-
-      <div className="mb-3">
-        <label htmlFor="tags" className="form-label">
-          Enter your hashtags here
-        </label>
-        <input
-          type="text"
-          className="form-control form-text-box"
-          id="tags"
-          ref={tagsElement}
-          placeholder="Please enter tags using space"
-        />
-      </div>
-
-      <button type="submit" className="btn btn-primary">
-        Post
-      </button>
+      <div className="form-group row">
+        <label htmlFor="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Enter hashtags</label>
+        <div className="col-sm-10">
+          <input type="text" id="tags" className="form-control form-control-lg" placeholder="Please enter tags using space" ref={tagsElement}/>
+        </div>
+        </div>
+        <center>
+        <div className="Post-Button">
+          <button type="submit" className="btn btn-primary">
+          Post
+          </button>
+        </div>
+      </center>
     </form>
   );
 };
