@@ -2,7 +2,8 @@ import { createContext, useReducer } from "react";
 
 export const PostList = createContext({
   postList: [],
-  addPost: () => {},
+  addPost: () => { },
+  addInitialPosts: () => {},
   deletePost: () => {},
 });
 
@@ -14,6 +15,8 @@ const postListReducer = (currPostList, action) => {
     );
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currPostList];
+  } else if (action.type === "ADD_Initial_POSTS") {
+    newPostList = action.payload.posts;
   }
   return newPostList;
 };
@@ -21,7 +24,7 @@ const postListReducer = (currPostList, action) => {
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(
     postListReducer,
-    DEFAULT_POST_LIST
+    []
   );
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
@@ -38,6 +41,15 @@ const PostListProvider = ({ children }) => {
     });
   };
 
+  const addInitialPosts = (posts) => {
+    dispatchPostList({
+      type: "ADD_Initial_POSTS",
+      payload: {
+        posts,
+      },
+    });
+  };
+
   const deletePost = (postId) => {
     dispatchPostList({
       type: "DELETE_POST",
@@ -48,29 +60,12 @@ const PostListProvider = ({ children }) => {
   };
 
   return (
-    <PostList.Provider value={{ postList, addPost, deletePost }}>
+    <PostList.Provider value={{ postList, addPost,addInitialPosts, deletePost }}>
       {children}
     </PostList.Provider>
   );
 };
 
-const DEFAULT_POST_LIST = [
-  {
-    id: "1",
-    title: "Going to Goa",
-    body: "Hi Friends, I am going to Goa, for my vacations. Shh.. mumma ko math bathana, Hope to enjoy a lot with lot of drinks",
-    reactions: 20,
-    userId: "user-6",
-    tags: ["vacation", "GOA", "Enjoying", "Private"],
-  },
-  {
-    id: "2",
-    title: "Life in TCS",
-    body: "Finally in one of the MNC Company felt crazy in the begining, But now missing so badly product based company, Hopefully will go back to some other MNC product based company",
-    reactions: 15,
-    userId: "user-9",
-    tags: ["TCS", "MNC","ProductBased", "ServiceBased"],
-  },
-];
+
 
 export default PostListProvider;
